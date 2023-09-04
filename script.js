@@ -19,11 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 const temperature = data.main.temp;
                 const description = data.weather[0].description;
                 const cityName = data.name;
+
                 weatherInfo.innerHTML = `Weather in ${cityName}: ${description}, Temperature: ${temperature}°C`;
+                weatherInfo.classList.add("fade-in");
             })
             .catch(error => {
                 console.error("Error fetching weather data:", error);
                 weatherInfo.innerHTML = "Unable to fetch weather data.";
+                weatherInfo.classList.add("fade-in");
             });
     });
 });
